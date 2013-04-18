@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>LoGgErRhEaD *Beta</title>
+
+<script type="text/javascript" src="loggerhead.js"></script>
+<script type="text/javascript" src="timer.js"></script>
+<link rel="stylesheet" type="text/css" href="loggerhead.css" />
+
+<!-- stole the following script, read it for copyrights, i felt lazy, but it seems pretty comprehensive/thorough, something no script of mine would ever be -->
+<script type="text/javascript" src="sorttable.js"></script>
+</head><body>
+
+<h1>LoGgErRhEaD <sup style="color: red; font-size: 14pt;">*Beta</sup></h1>
+
+<div id="sidebar">
+</div>
+
+<div id="display">
+</div>
+
+<form id="add">
+<fieldset>
+<legend>Add Player</legend>
+<label for="name_input">Name: </label><input type="text" id="name_input" />
+<label for="nickname_input">Nickname: </label><input type="text" id="nickname_input" />
+<input type="button" value="Add" onclick="addPlayer(document.getElementById('name_input').value, document.getElementById('nickname_input').value)" />
+</fieldset>
+</form>
+
+<div id="timer">
+<table>
+<tr id="times">
+	<td>06:00</td>
+	<td>05:00</td>
+	<td>00:20</td>
+</tr>
+<tr id="controls">
+	<td>
+		<input type="button" value="START" onclick="startHalf()" />
+		<input type="button" value="STOP" onclick="new function(){halfInt=clearInterval(halfInt)};" />
+		<input type="button" value="RESET" onclick="new function(){halfInt=clearInterval(halfInt);document.getElementById('times').getElementsByTagName('td')[0].innerHTML = '06:00';document.getElementById('times').getElementsByTagName('td')[0].style.color = '#000';}" />
+		<br />6m HALF
+	</td>
+	<td>
+		<input type="button" value="START" onclick="startTC()" />
+		<input type="button" value="STOP" onclick="new function(){TCInt = clearInterval(TCInt);}" />
+		<input type="button" value="+m" onclick="new function(){t = document.getElementById('times').getElementsByTagName('td')[1]; (t.innerHTML.charAt(0) == '0') ? m = parseInt(t.innerHTML.charAt(1)) : m = parseInt(t.innerHTML.split(':')[0]); s = t.innerHTML.split(':')[1]; t.innerHTML = (m>8) ? (m+1) + ':' + s : '0' + (m+1) + ':' + s;}" />
+		<input type="button" value="-m" onclick="new function(){t = document.getElementById('times').getElementsByTagName('td')[1]; (t.innerHTML.charAt(0) == '0') ? m = parseInt(t.innerHTML.charAt(1)) : m = parseInt(t.innerHTML.split(':')[0]); s = t.innerHTML.split(':')[1]; t.innerHTML = (m>10) ? (m-1) + ':' + s : '0' + (m-1) + ':' + s; if(m-1 < 0) t.innerHTML = '00:00';}" />
+		<input type="button" value="RESET" onclick="new function(){TCInt = clearInterval(TCInt); document.getElementById('times').getElementsByTagName('td')[1].innerHTML = '05:00';document.getElementById('times').getElementsByTagName('td')[1].style.color='#000';}" />
+		<br />?m TEAM CHALLENGE
+	</td>
+	<td>
+		<input type="button" value="START" onclick="startBonus()" />
+		<input type="button" value="RESET" onclick="new function(){bonusInt=clearInterval(bonusInt);document.getElementById('times').getElementsByTagName('td')[2].innerHTML = '00:20';document.getElementById('times').getElementsByTagName('td')[2].style.color = '#000';}" />
+		<br />20s BONUS
+	</td>
+</tr>
+</table>
+</div>
+
+</body></html>

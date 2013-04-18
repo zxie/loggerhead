@@ -1,0 +1,76 @@
+body {
+	font: 9pt verdana;
+}
+h1 {
+	font: bold 23pt georgia;
+}
+#sidebar {
+	float: left;
+	width: 230px;
+}
+#sidebar div.player {
+	padding: 6px 0 6px 5px;
+	width: 200px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	margin-top: -1px;
+}
+#sidebar div input {
+	padding: 0 1px;
+	float: right;
+	margin-top: -5px;
+	margin-right: 1px;
+}
+#display {
+	float: left;
+	line-height: 2em;
+	width: 500px;
+}
+#display div{
+	float:left;
+	width:200px;
+}
+#add {
+	position:absolute;
+	top: 5px;
+	right: 5px;
+}
+/* Sortable tables */
+table.sortable thead {
+	font: 9pt verdana;
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+/* timer */
+#timer {
+	position:fixed;
+	right:10px;
+	bottom:10px;
+	width: 532px;
+	border: 1px solid #ccc;
+	padding: 0;
+}
+#timer table {
+}
+#timer td {
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 2px;
+}
+#times td {
+	font: bold 32pt "courier new";
+	text-align:center;
+}
+#controls td {
+	text-align: center;
+	font: 10pt verdana;
+}
+#controls input {
+	margin:0;
+	padding: 0;
+	border: 1px solid #bbb;
+	background-color: #ddd;
+	font: 10pt verdana;
+}
